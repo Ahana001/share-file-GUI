@@ -66,7 +66,7 @@ const upload = function(){
     xhr.upload.onprogress = (event) => {
         progressEvent(event);
     }
-    xhr.open("POST","http://localhost:3000/api/files",true);
+    xhr.open("POST","https://share-file-app.herokuapp.com/api/files",true);
     xhr.send(formdata);
     fileInput.value = "";
     //console.log(fileInput.files[0]);
