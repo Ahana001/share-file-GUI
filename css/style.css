@@ -1,0 +1,128 @@
+:root{
+    --bg-color: #E8E8F6;
+    --container-width:500px;
+    --border-color-light: #B4AFF6;
+}
+body,html{
+    padding: 0;
+    margin: 0;
+    background-color: var(--bg-color);
+    height: 100vh;
+    width: 100vw;
+    font-family: system-ui;
+}
+body, .drop-zone{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.upload-container{
+    width: var(--container-width);
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.upload-container .drop-zone{
+    border: 2px dashed var(--border-color-light);
+    border-radius: 10px;
+    min-height: 200px;
+    margin: 30px;
+}
+.drop-zone .icon-container{
+    margin: 10px 0;
+    width: 75px;
+    height: 100px;
+    position: relative;
+}
+.drop-zone .icon-container img{
+    position: absolute;
+}
+.icon-container .center{
+    z-index: 10;
+    transform: translateY(5px);
+}
+.icon-container .left{
+    transform: rotate(-30deg) scale(0.9) translateX(-10px);
+    transform-origin: bottom;
+}
+.icon-container .right{
+    transform: rotate(30deg) scale(0.9) translateX(10px);
+    transform-origin: bottom;
+}
+#file{
+    display: none;
+}
+#browse{
+    color: #6052EF;
+    cursor: pointer;
+}
+.dragged{
+    background-color: #6052EF;
+}
+.progress-container{
+    height: 70px;
+    margin: 30px;
+    display: none;
+}
+.progress-container .progressBar{
+    background-color: #B4AFF6;
+    height: 100%;
+    border-radius: 10px;
+}
+.progressDetail{
+    margin: 15px;
+    padding-top: 5px;
+}
+.progressDetail p,h3{
+ padding: 0;
+ margin: 0;
+}
+.Link-container{
+    height: 35px;
+    border: 2px dashed var(--border-color-light);
+    margin: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+    position: relative;
+}
+.Link-container .link{
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-left: 10px;
+    font-size: 20px;
+}
+.Link-container img{
+    z-index: 5;
+    height: 100%;
+    cursor: pointer;
+    padding: 5px 2px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+}
+.Link-container .link:focus{
+    outline: none;
+}
+#toast{
+    background-color: #B4AFF6;
+    position: fixed;
+    left: 0;
+    bottom: 30px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 20px;
+    padding: 20px;
+    transform: translateX(-100%);
+    transition:all .5s ease-out;
+}
